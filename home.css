@@ -1,0 +1,172 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  nav {
+    background-color: #0e3e5e;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav h1 {
+    color: #ecf0f1;
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+  nav div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: #34495e;
+  }
+  nav input {
+    padding: 8px 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    outline: none;
+    font-size: 1em;
+  }
+  nav input:focus {
+    border-color: #3498db;
+  }
+  nav button {
+    padding: 8px 16px;
+    background-color: #0e5585;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  nav button:hover {
+    background-color: #2980b9;
+  }
+  nav button#reset-btn {
+    background-color: #6d1702;
+  }
+  nav button#reset-btn:hover {
+    background-color: #d14c3d;
+  }
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+    nav div {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    position: relative; /* Added for img positioning */
+  }
+  .hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Behind content */
+  }
+  .hero-content {
+    max-width: 50%;
+    text-align: left;
+    position: relative; /* Above img */
+    z-index: 1;
+    display: flex; /* New: Make it flex for side-by-side layout */
+    align-items: flex-start; /* Align items to top */
+    gap: 22px; /* Space between icons and text */
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .hero-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+  }
+  .social-icons {
+    display: flex;
+    flex-direction: column; /* New: Stack icons vertically */
+    gap: 15px;
+    position: relative; /* Added for positioning the line */
+    margin-top: 40px; /* Move icons down */
+  }
+  .social-icons::before {
+    content: "";
+    position: absolute;
+    top: -200px; /* Position line above icons */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 150px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Optional: subtle glow */
+  }
+  .social-icons a {
+    color: white;
+    font-size: 1.7em;
+    transition: color 0.3s ease;
+  }
+  .social-icons a:hover {
+    color: #3498db;
+  }
+  .text-content {
+    flex: 1; /* New: Allow text to take remaining space */
+    margin-top: -100px;
+  }
+  .hero h2 {
+    font-size: 3em;
+    margin: 0 0 20px 0;
+  }
+  .hero p {
+    font-size: 1.2em;
+    margin: 0 0 20px 0;
+    width: 70%; /* Reduce text box by 30% */
+    line-height: 1.4; /* Optional: Better readability */
+  }
+  
+  #book-now {
+    margin-top: 40px;
+    padding: 12px 30px;
+    background-color: #0e3e5e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: flex-start;
+  }
+  
+  #book-now:hover {
+    background-color: #2980b9;
+  }
