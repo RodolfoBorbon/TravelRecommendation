@@ -101,14 +101,13 @@ body {
     z-index: 1;
     display: flex; /* New: Make it flex for side-by-side layout */
     align-items: flex-start; /* Align items to top */
-    gap: 22px; /* Space between icons and text */
     flex-direction: column; /* Stack items vertically */
   }
   
   .hero-main {
     display: flex;
     align-items: flex-start;
-    gap: 22px;
+    gap: 82px; /* Space between icons and text */
   }
   .social-icons {
     display: flex;
@@ -120,7 +119,7 @@ body {
   .social-icons::before {
     content: "";
     position: absolute;
-    top: -200px; /* Position line above icons */
+    top: -250px; /* Position line above icons */
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
@@ -153,6 +152,7 @@ body {
   
   #book-now {
     margin-top: 40px;
+    margin-left: 108px;
     padding: 12px 30px;
     background-color: #0e3e5e;
     color: white;

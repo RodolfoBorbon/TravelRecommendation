@@ -24,33 +24,49 @@
         class="hero-content"
         style="
           max-width: 100%;
-          padding: 40px 20px;
+          padding: 0 20px 40px 20px;
           height: 100%;
           overflow-y: auto;
+          display: flex;
+          flex-direction: row;
+          gap: 0%;
         "
       >
-        <h1
-          style="
-            color: white;
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-          "
-        >
-          ABOUT US
-        </h1>
+        <!-- Social Icons Section -->
+        <div class="social-icons" style="align-self: center;">
+          <a href="#" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+          <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
 
-        <main style="max-width: 1200px; margin: 0 auto">
+        <!-- Main Content Section -->
+        <div style="flex: 1; align-self: flex-start; padding-top: 60px; margin-left: 90px;">
+          <h1
+            style="
+              color: white;
+              margin-bottom: 0;
+              text-align: left;
+              font-size: 3em;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+              padding-left: 42px;
+            "
+          >
+            ABOUT US
+          </h1>
+
+          <main style="max-width: 2352px; margin: 0">
           <section
             style="
-              background: rgba(0, 0, 0, 0.1);
+              background: rgba(0, 0, 0, 0.15);
               padding: 30px;
               border-radius: 12px;
               margin-bottom: 30px;
               backdrop-filter: blur(8px);
               border: 1px solid rgba(255, 255, 255, 0.15);
               box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+              margin-top: 30px;
+              max-width: 100%;
             "
           >
             <p
@@ -59,6 +75,10 @@
                 font-size: 1.1em;
                 color: #ffffff;
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+                text-align: justify;
+                margin: 0;
+                width: 100%;
+                box-sizing: border-box;
               "
             >
               Welcome to Our Company! We are a team of passionate individuals
@@ -78,7 +98,7 @@
               display: grid;
               grid-template-columns: auto 1fr;
               gap: 30px;
-              margin-top: 40px;
+              margin-top: 90px;
               align-items: start;
             "
           >
@@ -86,7 +106,7 @@
               style="
                 color: white;
                 margin-bottom: 30px;
-                font-size: 2.5em;
+                font-size: 2em;
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
                 writing-mode: vertical-rl;
                 text-orientation: mixed;
@@ -106,7 +126,7 @@
               <!-- John Doe -->
               <div
                 style="
-                  background: rgba(0, 0, 0, 0.25);
+                  background: rgba(0, 0, 0, 0.15);
                   padding: 25px;
                   border-radius: 12px;
                   backdrop-filter: blur(8px);
@@ -116,12 +136,15 @@
                   text-align: center;
                 "
               >
-                <h3 style="margin-bottom: 10px">John Doe</h3>
+                <h3 style="margin-bottom: 10px; text-align: center;">John Doe</h3>
                 <p
                   style="
                     line-height: 1.6;
                     margin-bottom: 15px;
                     text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 100%;
                   "
                 >
                   John is responsible for overseeing the company's vision and
@@ -155,12 +178,15 @@
                   text-align: center;
                 "
               >
-                <h3 style="margin-bottom: 10px">Celina Thomas</h3>
+                <h3 style="margin-bottom: 10px; text-align: center;">Celina Thomas</h3>
                 <p
                   style="
                     line-height: 1.6;
                     margin-bottom: 15px;
                     text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 100%;
                   "
                 >
                   Celina is responsible for leading the project teams and
@@ -194,12 +220,15 @@
                   text-align: center;
                 "
               >
-                <h3 style="margin-bottom: 10px">Mike Tysen</h3>
+                <h3 style="margin-bottom: 10px; text-align: center;">Mike Tysen</h3>
                 <p
                   style="
                     line-height: 1.6;
                     margin-bottom: 15px;
                     text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 100%;
                   "
                 >
                   Mike is responsible for managing delivery operations and
@@ -221,8 +250,9 @@
               </div>
             </div>
           </section>
-        </main>
+        </div>
       </div>
     </section>
   </body>
 </html>
+
