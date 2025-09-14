@@ -27,28 +27,65 @@ function searchRecommendations(keyword) {
     const searchTerm = keyword.toLowerCase().trim();
     let results = [];
 
-    // Search for beaches
-    if (searchTerm.includes('beach') || searchTerm.includes('beaches')) {
-        results = [...travelData.beaches];
+    // Helper function to check if text matches search term
+    function matchesSearch(text) {
+        return text.toLowerCase().includes(searchTerm);
     }
-    // Search for temples
-    else if (searchTerm.includes('temple') || searchTerm.includes('temples')) {
-        results = [...travelData.temples];
-    }
-    // Search for countries or cities
-    else if (searchTerm.includes('country') || searchTerm.includes('countries') || 
-             searchTerm.includes('city') || searchTerm.includes('cities')) {
-        // Flatten all cities from all countries
-        travelData.countries.forEach(country => {
+
+    // Search beaches - check name and description
+    travelData.beaches.forEach(beach => {
+        if (matchesSearch(beach.name) || matchesSearch(beach.description)) {
+            results.push(beach);
+        }
+    });
+
+    // Search temples - check name and description
+    travelData.temples.forEach(temple => {
+        if (matchesSearch(temple.name) || matchesSearch(temple.description)) {
+            results.push(temple);
+        }
+    });
+
+    // Search countries and cities - check country names, city names, and descriptions
+    travelData.countries.forEach(country => {
+        // Check if country name matches
+        if (matchesSearch(country.name)) {
             results.push(...country.cities);
+        } else {
+            // Check each city individually
+            country.cities.forEach(city => {
+                if (matchesSearch(city.name) || matchesSearch(city.description)) {
+                    results.push(city);
+                }
+            });
+        }
+    });
+
+    // If searching for category terms, include all items from that category
+    if (searchTerm.includes('beach') || searchTerm.includes('beaches')) {
+        travelData.beaches.forEach(beach => {
+            if (!results.find(item => item.name === beach.name)) {
+                results.push(beach);
+            }
         });
     }
-    // Search by specific country name
-    else {
-        travelData.countries.forEach(country => {
-            if (country.name.toLowerCase().includes(searchTerm)) {
-                results.push(...country.cities);
+    
+    if (searchTerm.includes('temple') || searchTerm.includes('temples')) {
+        travelData.temples.forEach(temple => {
+            if (!results.find(item => item.name === temple.name)) {
+                results.push(temple);
             }
+        });
+    }
+    
+    if (searchTerm.includes('country') || searchTerm.includes('countries') || 
+        searchTerm.includes('city') || searchTerm.includes('cities')) {
+        travelData.countries.forEach(country => {
+            country.cities.forEach(city => {
+                if (!results.find(item => item.name === city.name)) {
+                    results.push(city);
+                }
+            });
         });
     }
 

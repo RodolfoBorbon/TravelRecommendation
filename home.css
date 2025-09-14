@@ -19,11 +19,23 @@ body {
     margin: 0;
     font-size: 1.8em;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  nav h1 i {
+    color: #3498db;
+    font-size: 1.2em;
   }
   nav div {
     display: flex;
     align-items: center;
     gap: 15px;
+  }
+  
+  nav div:first-of-type {
+    margin-left: 850px;
   }
   nav a {
     color: #ecf0f1;
@@ -59,7 +71,7 @@ body {
     background-color: #2980b9;
   }
   nav button#reset-btn {
-    background-color: #6d1702;
+    background-color: #36aab3;
   }
   nav button#reset-btn:hover {
     background-color: #d14c3d;
@@ -172,13 +184,13 @@ body {
   }
   
   /* Search Results Styles */
-.search-results {
+  .search-results {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% - 20px);
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 50;
     padding: 80px 20px 20px 20px;
     overflow-y: auto;
@@ -188,6 +200,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    margin-left: 590px;
 }
 
 .results-container h3 {
@@ -217,8 +230,8 @@ body {
 }
 
 #results-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
@@ -228,6 +241,10 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .result-card:hover {
@@ -236,9 +253,10 @@ body {
 }
 
 .result-card img {
-    width: 100%;
-    height: 200px;
+    width: 300px;
+    height: 270px;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .result-content {
@@ -290,8 +308,13 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    #results-list {
-        grid-template-columns: 1fr;
+    .result-card {
+        flex-direction: column;
+    }
+    
+    .result-card img {
+        width: 100%;
+        height: 200px;
     }
     
     .result-card {
